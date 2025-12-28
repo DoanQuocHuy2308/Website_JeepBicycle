@@ -3,7 +3,7 @@ var router = express.Router();
 const token = require('../middleware/authToken');
 const users = require('../controllers/ctrlUsers');
 const uploads = require('../middleware/uploads');
-router.get('/getAllUsers',token.verifyToken, users.getAllUsers);
+router.get('/getAllUsers', users.getAllUsers);
 router.get('/getUsersById',token.verifyToken, users.getUsersById);
 router.post('/createUsers',token.verifyToken,token.verifyTokenAmin, uploads.single('file'), users.createUsers);
 router.put('/updateUsers',token.verifyToken, uploads.single('file'), users.updateUsers);
